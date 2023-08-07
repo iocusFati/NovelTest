@@ -1,0 +1,91 @@
+@hideAll
+@back Forest.Crumble time:1.5
+
+@if currentQuest=="dialogueWithYourself"
+    @goto .DialogueWithYourself
+@elseIf currentQuest=="acquaintanceWithHoiku"
+    @goto .AcquaintanceWithHoiku
+@elseIf currentQuest="decidedFuture"
+    @goto .AfterTheQuest
+@else
+    @goto .Default
+
+@stop
+
+#DialogueWithYourself
+@char Player look:Center pos:50,0
+Player.Pain: "This place feels different now, without Hoiku's presence and excitement."
+Player.Default: "Well, what should I do with this artifact.[char Player.Confidence] It may benefit me a lot in the future,[char Player.Pain] but Nanikun and Hoiku were so helpful and nice to me..."
+
+@updateQuest "Take the decision" location:"Desert"
+@set currentQuest="decidingFuture"
+@toast "Quest updated"
+@enableMap
+
+@stop
+
+#AcquaintanceWithHoiku
+@char Hoiku.Angry look:Left pos:85,0
+Hoiku: Where have i left my glasses???
+@char Hoiku pos:20,0 time:1.5
+@char Hoiku look:Right time:0.1 wait:false
+@char Hoiku pos:75,0 time:1.5
+
+@char Hoiku look:Left pos:75,-30 scale:1.3 tint:#F89090
+Hoiku: Just can't find them!
+
+@char Player.Default look:Right pos:-20,0
+@char Player pos:30 time:1.25
+@char Hoiku.Surprise look:Left pos:75,0 scale:1 tint:white
+
+Hoiku.Happy: Ah, a fellow seeker of knowledge![char Hoiku.Default] What brings you here?
+Player.Happy: Greetings, Hoiku.[char Player.Default] Nanikun told me you might have some insights about an ancient artifact.
+Hoiku.Happy: Oh, absolutely![char Hoiku.Default] But before we get into that, let's have a bit of fun with a mind-bending puzzle.
+
+@startGame
+@stop
+
+#AfterTheGame
+Hoiku.Surprise: You nailed it! Your wit is impressive.[char Hoiku.Default] Now, about that artifact...
+
+@updateQuest "Go to dungeon and take the artifact" location:"Dungeon"
+@set currentQuest="IntoTheDungeon"
+@set dungeonUnlocked=true
+@toast "Quest updated"
+
+@openDungeon true
+@enableMap
+@stop
+
+#AfterTheQuest
+@if hoikuIsUpset
+    @goto .AngryHoiku
+@else
+    @goto .HappyHoiku
+
+#AngryHoiku
+@char Player.Default look:Right pos:15,0 wait:false
+@char Hoiku.Default look:left pos:75,0
+
+Hoiku.Pain: Well, you clearly made your choice. Just don't expect me to forget this anytime soon.
+Player.Pain: I didn't mean to upset you, Hoiku. I thought I was doing the right thing.
+
+@enableMap
+@stop
+
+#HappyHoiku
+@char Player.Default look:Right pos:15,0 wait:false
+@char Hoiku.Default look:left pos:75,0
+
+Hoiku.Happy: Thank you for the artifact, {PlayerName}!
+Player.Surprise: Ah, your welcome, Hoiku![char Player.Happy]
+
+@enableMap
+@stop
+
+#Default
+@char Player.Default look:Right pos:15,0 wait:false
+@char Hoiku look:Left pos:75,0
+
+@enableMap
+@stop

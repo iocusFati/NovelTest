@@ -1,0 +1,99 @@
+@hideAll
+@back Desert.Crumble time:1.5
+
+@if currentQuest=="decidingFuture"
+    @goto .DeсidingFuture
+@elseIf currentQuest=="decidedFuture"
+    @goto .AfterTheQuest
+@else
+    @goto .Default
+
+#DeсidingFuture
+@char Player.Default pos:50,0 wait:false
+@char Nanikun look:Right pos:15,0 wait:false
+@char Hoiku look:Left pos:85,0
+
+Nanikun: Welcome back! Did you find the artifact?
+Player.Confidence: Indeed, I have it right here[char Player.Default]!
+Hoiku: So what've you decided to to with it[skipInput]?
+
+@choice "Keep the artifact" goto:.KeepTheArtifact
+@choice "Give it to Nanikun" goto:.GiveTheArtifactToNanikun
+@choice "Give it to Hoiku" goto:.GiveTheArtifactToHoiku
+
+@set currentQuest="decidedFuture"
+
+@updateQuest "Сongratulations! Your journey came to it's end"
+@set currentQuest="decidedFuture"
+@toast "Quest finished"
+
+@enableMap
+@stop
+
+# KeepTheArtifact
+Player.Confidence: I've decided to keep the artifact with me.[char Player.Default][char Nanikun.Pain][char Hoiku.Pain] Its fate intertwines with my journey.
+@char Nanikun.Pain wait:false
+Hoiku.Pain: Hmm, alright. Just remember, some paths are meant to be shared.
+
+@set hoikuIsUpset=true
+@set nanikunIsUpset=true
+
+@enableMap
+@stop
+
+# GiveTheArtifactToNanikun
+Player.Confidence: Nanikun, this artifact belongs to you. I can sense its importance to your heart.[char Hoiku.Pain wait:false]
+Nanikun.Happy: Oh, thank you! You have no idea how much this means to me. You're a true friend.[char Player.Happy]
+Hoiku.Angry: Hmm, alright. Just remember, some paths are meant to be shared.
+
+@set hoikuIsUpset=true
+@set nanikunIsUpset=false
+
+@enableMap
+@stop
+
+# GiveTheArtifactToHoiku
+Player.Confidence: Hoiku, this artifact seems to resonate with your research. Take it and unravel its mysteries.[char Nanikun.Pain wait:false]
+Hoiku.Happy: Amazing! Your understanding of its significance is spot on. Together, we'll uncover its secrets![char Player.Happy]
+Nanikun.Pain: Hmm, alright. Just remember, some paths are meant to be shared.
+
+@set hoikuIsUpset=false
+@set nanikunIsUpset=true
+
+@enableMap
+@stop
+
+#AfterTheQuest
+@if nanikunIsUpset
+    @goto .AngryNanikun
+@else
+    @goto .HappyNanikun
+
+#AngryNanikun
+@char Player.Default look:Right pos:15,0 wait:false
+@char Nanikun.Default look:left pos:75,0
+
+Nanikun.Pain: So, you decided to play hero and save the day, huh? Thought you were being all noble, didn't you?
+Player.Pain: Nanikun, I didn't mean to upset you...
+Nanikun.Default: Spare me the apologies. Just know that your "selflessness" hasn't gone unnoticed. Maybe next time, think before you act.
+@char Player.Default
+
+@enableMap
+@stop
+
+#HappyNanikun
+@char Player.Default look:Right pos:15,0 wait:false
+@char Nanikun look:left pos:75,0
+
+Nanikun.Happy: Thank you for the artifact, {PlayerName}!
+Player.Surprise: Ah, your welcome, Nanikun![char Player.Happy]
+
+@enableMap
+@stop
+
+#Default
+@char Player.Default look:Right pos:15,0 wait:false
+@char Nanikun look:Left pos:75,0
+
+@enableMap
+@stop

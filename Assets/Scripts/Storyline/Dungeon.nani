@@ -1,0 +1,21 @@
+@hideAll
+@back MysteriousDungeon.Crumble time:1.5
+@showArtifact
+@openDungeon false
+@char Player pos:25,0
+
+Player: Finally, this must be the artifact Hoiku mentioned. It's so captivating.
+
+@stop
+
+#PickedTheArtifact
+@print "Wooooow!" author:Player fadeTime:2 wait:false
+
+@updateQuest "It's time to think" location:"Library"
+@set currentQuest="dialogueWithYourself"
+@toast "Quest updated"
+
+@wait 1 do:"@hideAll time:2 wait:false, @hideArtifact 2 wait:false" wait:true
+@goto Library
+
+@stop
