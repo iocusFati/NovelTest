@@ -16,6 +16,7 @@ namespace UI
         [SerializeField] private float _pauseBetweenLetters;
         [SerializeField] private Transform _mapMarker;
         [SerializeField] private GameObject _container;
+        [SerializeField] private GameObject _buttonContainer;
         [SerializeField] private List<LocationUI> _locationsUI;
         [SerializeField] private Button _dungeonButton;
         [SerializeField] private Image _dungeonIcon;
@@ -44,8 +45,11 @@ namespace UI
         public void ShowAchievements() => 
             _questLog.ShowQuestText();
 
-        public void Appear() => 
-            _container.SetActive(true);
+        public void Appear(bool appear)
+        {
+            _container.SetActive(appear);
+            _buttonContainer.SetActive(appear);
+        }
 
         public void BlockMap(bool block) => 
             _mapButton.interactable = !block;
@@ -56,6 +60,7 @@ namespace UI
         public void OpenDungeon(bool open)
         {
             _mapUI.OpenDungeon(open);
+            Visible = open;
         }
     }
 }

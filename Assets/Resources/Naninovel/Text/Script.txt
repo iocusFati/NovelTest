@@ -1,0 +1,7 @@
+t_FindArtifact: Find Artifact
+t_TalkToHoiku: Go talk to Hoiku
+t_End: Сongratulations! Your journey came to it's end
+t_TakeTheDecision: Take the decision
+t_GoToDungeon: Go to dungeon and take the artifact
+t_Think: It's time to think
+QuestHeader: Quest

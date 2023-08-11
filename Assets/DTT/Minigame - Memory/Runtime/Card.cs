@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Naninovel;
 using UnityEngine.UI;
 
 namespace DTT.MinigameMemory 
@@ -11,6 +12,8 @@ namespace DTT.MinigameMemory
     /// </summary>
     public class Card : MonoBehaviour
     {
+        private const string FlipCardSoundName = "FlipCard";
+
         /// <summary>
         /// Is fired when clicked.
         /// </summary>
@@ -63,6 +66,8 @@ namespace DTT.MinigameMemory
         /// </summary>
         private bool _isShowing = false;
 
+        private IAudioManager _audioManager;
+
         /// <summary>
         /// Sets the sprites for the card.
         /// </summary>
@@ -71,6 +76,7 @@ namespace DTT.MinigameMemory
         public void Init(Sprite backSprite)
         {
             _backSprite = backSprite;
+            _audioManager = Engine.GetService<IAudioManager>();
 
             _cardButton.image.sprite = _backSprite;
         }
@@ -86,7 +92,8 @@ namespace DTT.MinigameMemory
         /// </summary>
         public void FlipCard(float speed)
         {
-            this.StartCoroutine(Flip(Quaternion.Euler(0, (_isShowing ? 0 : 180), 0), _isShowing ? _backSprite : _frontSprite, speed));
+            _audioManager.PlaySfxAsync(FlipCardSoundName);
+            StartCoroutine(Flip(Quaternion.Euler(0, (_isShowing ? 0 : 180), 0), _isShowing ? _backSprite : _frontSprite, speed));
             _isShowing = !_isShowing;
         }
 

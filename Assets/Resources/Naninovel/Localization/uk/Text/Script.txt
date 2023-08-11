@@ -1,0 +1,9 @@
+; English <en> to Ukrainian <uk> localization document for `Script` managed text document
+
+t_FindArtifact: Знайди артефакт.
+t_TalkToHoiku: Йди поговори з Гойку.
+t_End: Вітання! Твоя подорож підійшла до завершення.
+t_TakeTheDecision: Прийми рішення.
+t_GoToDungeon: Йди в підземелля й знайти артефакт.
+t_Think: Час подумати.
+QuestHeader: Kвест

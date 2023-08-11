@@ -1,5 +1,7 @@
 @hideAll
-@back Forest.Crumble time:1.5
+@stopBgm
+@bgm LibraryBackground volume:0.3
+@back Library.Crumble time:1.5
 
 @if currentQuest=="dialogueWithYourself"
     @goto .DialogueWithYourself
@@ -17,7 +19,7 @@
 Player.Pain: "This place feels different now, without Hoiku's presence and excitement."
 Player.Default: "Well, what should I do with this artifact.[char Player.Confidence] It may benefit me a lot in the future,[char Player.Pain] but Nanikun and Hoiku were so helpful and nice to me..."
 
-@updateQuest "Take the decision" location:"Desert"
+@updateQuest {t_TakeTheDecision} location:"Desert"
 @set currentQuest="decidingFuture"
 @toast "Quest updated"
 @enableMap
@@ -48,7 +50,7 @@ Hoiku.Happy: Oh, absolutely![char Hoiku.Default] But before we get into that, le
 #AfterTheGame
 Hoiku.Surprise: You nailed it! Your wit is impressive.[char Hoiku.Default] Now, about that artifact...
 
-@updateQuest "Go to dungeon and take the artifact" location:"Dungeon"
+@updateQuest {t_GoToDungeon} location:"Dungeon"
 @set currentQuest="IntoTheDungeon"
 @set dungeonUnlocked=true
 @toast "Quest updated"
@@ -58,25 +60,22 @@ Hoiku.Surprise: You nailed it! Your wit is impressive.[char Hoiku.Default] Now, 
 @stop
 
 #AfterTheQuest
+@char Player.Default look:Right pos:15,0  tint:white wait:false
+@char Hoiku.Default look:left pos:75,0 tint:white
+
 @if hoikuIsUpset
     @goto .AngryHoiku
 @else
     @goto .HappyHoiku
 
 #AngryHoiku
-@char Player.Default look:Right pos:15,0 wait:false
-@char Hoiku.Default look:left pos:75,0
-
-Hoiku.Pain: Well, you clearly made your choice. Just don't expect me to forget this anytime soon.
+Hoiku.Angry: Well, you clearly made your choice. Just don't expect me to forget this anytime soon.
 Player.Pain: I didn't mean to upset you, Hoiku. I thought I was doing the right thing.
 
 @enableMap
 @stop
 
 #HappyHoiku
-@char Player.Default look:Right pos:15,0 wait:false
-@char Hoiku.Default look:left pos:75,0
-
 Hoiku.Happy: Thank you for the artifact, {PlayerName}!
 Player.Surprise: Ah, your welcome, Hoiku![char Player.Happy]
 

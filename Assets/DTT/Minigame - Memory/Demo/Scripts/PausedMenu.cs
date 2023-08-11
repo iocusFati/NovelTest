@@ -14,11 +14,6 @@ namespace DTT.MinigameMemory.Demo
         public Button _restartButton;
 
         /// <summary>
-        /// Home button of the menu.
-        /// </summary>
-        public Button _homeButton;
-        
-        /// <summary>
         /// Resume button of the menu.
         /// </summary>
         public Button _resumeButton;

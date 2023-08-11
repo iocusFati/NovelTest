@@ -25,8 +25,6 @@ namespace UI.Services
 
         public UniTask InitializeServiceAsync()
         {
-            _itemLoader = Config.Loader.CreateFor<GameObject>(_providersManager);
-            
             return UniTask.CompletedTask;
         }
 
@@ -36,7 +34,6 @@ namespace UI.Services
 
         public void DestroyService()
         {
-            _itemLoader?.ReleaseAll(this);
         }
 
         public async Task StartMiniGame()

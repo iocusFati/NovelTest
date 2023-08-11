@@ -1,4 +1,6 @@
-@back Desert.Crumble time:1.5
+@back Town.Crumble time:1.5
+@stopBgm
+@bgm TownBackground volume:0.3
 
 @char Nanikun look:Left pos:75,0
 @wait 1
@@ -6,9 +8,10 @@
 @char Player look:Right pos:25,0
 @wait 1
 
+@printer CustomPrinter
 Nanikun: Hey there! You seem new around here. Need any help finding your way?
 Player.Happy: Thanks! I'm actually on a quest. I need to find ancient Ashura artifact! 
-@updateQuest "Find Ashura artifact"
+@updateQuest {t_FindArtifact}
 @toast "Quest given"
 
 Nanikun.Surprise: That's wonderful! I'm Nanikun, by the way. May I know your name?
@@ -19,7 +22,7 @@ Nanikun.Surprise: That's wonderful! I'm Nanikun, by the way. May I know your nam
 Player.Default: You can call me {PlayerName}.
 Nanikun.Default:  Great to meet you, {PlayerName}! I've got a lead on an artifact that might interest you. I'd be thrilled if you could check it out.
 
-@updateQuest "Go talk to Hoiku" location:"Library"
+@updateQuest {t_TalkToHoiku} location:"Library"
 @set currentQuest="acquaintanceWithHoiku"
 @toast "Quest updated"
 

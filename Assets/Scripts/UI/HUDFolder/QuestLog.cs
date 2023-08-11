@@ -13,6 +13,8 @@ namespace UI
         private readonly ICoroutineRunner _coroutineRunner;
         private readonly float _pauseBetweenLetters;
 
+        private int _questCounter = 1;
+        
         private readonly List<string> _unwrittenAchievements = new();
 
         public QuestLog(TextMeshProUGUI text, 
@@ -36,7 +38,7 @@ namespace UI
         {
             foreach (var achievement in _unwrittenAchievements)
             {
-                _text.text += "\n";
+                _text.text += $"\n{_questCounter}. ";
                 char[] letters = SplitText(achievement);
 
                 foreach (var letter in letters)
@@ -45,7 +47,11 @@ namespace UI
 
                     yield return new WaitForSeconds(_pauseBetweenLetters);
                 }
+
+                _questCounter++;
             }
+            
+            _unwrittenAchievements.Clear();
         }
         
         private static char[] SplitText(string text) => 

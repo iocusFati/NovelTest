@@ -1,4 +1,5 @@
-﻿using Naninovel;
+﻿using System;
+using Naninovel;
 using Naninovel.Commands;
 using Naninovel.UI;
 using UI;
@@ -15,11 +16,17 @@ namespace Commands
         {
             IUIManager uiManager = Engine.GetService<IUIManager>();
             HUD hud = uiManager.GetUI<HUD>();
-            
-            hud.Appear();
-            hud.BlockMap(true);
+
+            if (!showHUD.HasValue || (showHUD.HasValue && showHUD.Value)) 
+                ShowHUD(hud);
 
             return base.ExecuteAsync(asyncToken);
+        }
+
+        private static void ShowHUD(HUD hud)
+        {
+            hud.Appear(true);
+            hud.BlockMap(true);
         }
     }
 }

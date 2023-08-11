@@ -22,6 +22,9 @@ namespace Naninovel.Commands
         /// </summary>
         [ParameterAlias(NamelessParameterAlias), AppearanceContext(0, actorId: BackgroundsConfiguration.MainActorId), ConstantContext(typeof(TransitionType), 1)]
         public NamedStringParameter AppearanceAndTransition;
+        
+        [ParameterAlias("showHUD")]
+        public BooleanParameter showHUD;
 
         protected override bool AllowPreload => base.AllowPreload || Assigned(AppearanceAndTransition) && !AppearanceAndTransition.DynamicValue;
         protected override string AssignedId => base.AssignedId ?? BackgroundsConfiguration.MainActorId;

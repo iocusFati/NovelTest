@@ -1,0 +1,37 @@
+; English <en> to Ukrainian <uk> localization document for `Start` naninovel script
+
+# 2d8de612
+; Nanikun: Hey there! You seem new around here. Need any help finding your way?
+Nanikun: Привіт! Ти, здається, тут новенький. Потрібна допомога, щоб знайти дорогу?
+
+# bd35a36
+; Player.Happy: Thanks! I'm actually on a quest. I need to find ancient Ashura artifact! 
+Player.Happy: Дякую! Я взагалі-то в пошуках. Мені потрібно знайти древній артефакт Ашура! 
+
+# 730aba60
+; @toast "Quest given"
+@toast "Квест розпочато"
+
+# c67e8f91
+; Nanikun.Surprise: That's wonderful! I'm Nanikun, by the way. May I know your name?
+Nanikun.Surprise: Чудово! До речі, я Нанікун. Можна дізнатися твоє ім'я?
+
+# f4c8a666
+; @input PlayerName summary:"Choose your name."
+@input PlayerName summary:"Назви своє ім'я"
+
+# 4df11582
+; Player.Default: You can call me {PlayerName}.
+Player.Default: Мене звати {PlayerName}.
+
+# 2f376d89
+; Nanikun.Default:  Great to meet you, {PlayerName}! I've got a lead on an artifact that might interest you. I'd be thrilled if you could check it out.
+Nanikun.Default:  Радий познайомитись, {PlayerName}! У мене є зачіпка щодо артефакту, який може тебе зацікавити. Я був би радий, якби ти її перевів.
+
+# b780186e
+; @toast "Quest updated"
+@toast "Квест оновлено"
+
+# ed3817c7
+; Player.Surprise: Sounds like an exciting adventure! I'm in. Lead the way!
+Player.Surprise: Звучить як захоплююча пригода! Я в долі. Показуй дорогу!

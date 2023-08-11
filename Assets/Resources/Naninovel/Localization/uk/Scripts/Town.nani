@@ -1,0 +1,80 @@
+; English <en> to Ukrainian <uk> localization document for `Desert` naninovel script
+
+# 2b6224b9
+; Nanikun: Welcome back! Did you find the artifact?
+Nanikun: З поверненням! Ти знайшов артефакт?
+
+# f51874e8
+; Player.Confidence: Indeed, I have it right here[char Player.Default]!
+Player.Confidence: Звісно, ось він[char Player.Default]!
+
+# c86b4e0b
+; Hoiku: So what've you decided to to with it[skipInput]?
+Hoiku: То що ти вирішив з ним зробити[skipInput]?
+
+# 1b3433c3
+; @choice "Keep the artifact" goto:.KeepTheArtifact
+@choice "Залишити собі" goto:.KeepTheArtifact
+
+# 97122d0f
+; @choice "Give it to Nanikun" goto:.GiveTheArtifactToNanikun
+@choice "Віддати Нанікуну" goto:.GiveTheArtifactToNanikun
+
+# c6c2fd1f
+; @choice "Give it to Hoiku" goto:.GiveTheArtifactToHoiku
+@choice "Віддати Гойку" goto:.GiveTheArtifactToHoiku
+
+# 308ea7c
+; @toast "Quest finished"
+@toast "Квест завершено"
+
+# 8ff00704
+; Player.Confidence: I've decided to keep the artifact with me.[char Player.Default][char Nanikun.Pain][char Hoiku.Pain] Its fate intertwines with my journey.
+Player.Confidence: Я вирішив залишити артефакт собі.[char Player.Default][char Nanikun.Pain][char Hoiku.Pain] Його доля переплітається з моїм шляхом.
+
+# ce16ce1a
+; Hoiku.Pain: Hmm, alright. Just remember, some paths are meant to be shared.
+Hoiku.Pain: Гмм, гаразд. Просто пам'ятай, що деяким шляхам суджено перетнутися.
+
+# db4eac28
+; Player.Confidence: Nanikun, this artifact belongs to you. I can sense its importance to your heart.[char Hoiku.Pain wait:false]
+Player.Confidence: Нанікун, цей артефакт належить тобі. Я відчуваю його важливість для тебе.[char Hoiku.Pain wait:false]
+
+# 4cec24fc
+; Nanikun.Happy: Oh, thank you! You have no idea how much this means to me. You're a true friend.[char Player.Happy]
+Nanikun.Happy: О, дякую! Ти навіть не уявляєш, як багато це для мене значить. Ти справжній друг.
+
+# 47f86d8e
+; Hoiku.Angry: Hmm, alright. Just remember, some paths are meant to be shared.
+Hoiku.Angry: Гмм, гаразд. Просто пам'ятай, що деяким шляхам суджено перетнутися.
+
+# 93994a98
+; Player.Confidence: Hoiku, this artifact seems to resonate with your research. Take it and unravel its mysteries.[char Nanikun.Pain wait:false]
+ Player.Confidence: Гойку, цей артефакт, здається, резонує з твоїми дослідженнями. Візьми його і розгадай його таємниці..[char Nanikun.Pain wait:false]
+
+# fafdf5e7
+; Hoiku.Happy: Amazing! Your understanding of its significance is spot on. Together, we'll uncover its secrets![char Player.Happy]
+Hoiku.Happy:Дивовижно! Ти досконало розумієш його значення. Разом ми розкриємо його таємниці![char Player.Happy]
+
+# 4f2c0ca4
+; Nanikun.Pain: Hmm, alright. Just remember, some paths are meant to be shared.
+Nanikun.Pain: Гмм, гаразд. Просто пам'ятай, що деяким шляхам суджено перетнутися.
+
+# deaf4ddd
+; Nanikun.Pain: So, you decided to play hero and save the day, huh? Thought you were being all noble, didn't you?
+Nanikun.Pain: То ти вирішив пограти в героя, так? Думав, що ти такий благородний, чи не так?
+
+# ad003716
+; Player.Pain: Nanikun, I didn't mean to upset you...
+Player.Pain: Нанікун, я не хотів тебе засмучувати...
+
+# 9ce7f9ea
+Nanikun.Default: Позбав мене від своїх вибачень. Просто знай, що твоя "безкорисливість" не залишилася непоміченою. Можливо, наступного разу подумай, перш ніж діяти.
+
+# f5dd4a63
+; Nanikun.Happy: Thank you for the artifact, {PlayerName}!
+Nanikun.Happy: Дякую тобі за артефакт, {PlayerName}!
+
+# 14e527cb
+; Player.Surprise: Ah, your welcome, Nanikun![char Player.Happy]
+ Player.Surprise: Завжди радий, Нанікун![char Player.Happy]

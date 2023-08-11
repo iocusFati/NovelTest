@@ -1,0 +1,13 @@
+; English <en> to Ukrainian <uk> localization document for `Dungeon` naninovel script
+
+# f56e1068
+; Player: Finally, this must be the artifact Hoiku mentioned. It's so captivating.
+Player: Нарешті, це, мабуть, артефакт, про якого розповыдав Гойку. Він такий чарівний.
+
+# 85c23297
+; @print "Wooooow!" author:Player fadeTime:2 wait:false
+@print "Ваааауу!" author:Player fadeTime:2 wait:false
+
+# b780186e
+; @toast "Quest updated"
+@toast "Квест оновлено"

@@ -29,7 +29,7 @@ namespace Naninovel.UI
                 appearances[appearance.name] = appearance;
         }
 
-        public void Show (string text, string appearance = default, float? duration = default)
+        public void Show (string text, string appearance = default, float? duration = 0.5f)
         {
             if (!TrySelectAppearance(appearance, out var selectedAppearance)) return;
             if (hideTimer.Running) hideTimer.Stop();

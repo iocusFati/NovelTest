@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using DTT.MinigameBase;
-using DTT.MinigameBase.Timer;
 using DTT.MinigameBase.UI;
+using Naninovel;
 using UnityEngine.Events;
+using Timer = DTT.MinigameBase.Timer.Timer;
 
 namespace DTT.MinigameMemory
 {
@@ -90,6 +91,8 @@ namespace DTT.MinigameMemory
             _isPaused = false;
             _isGameActive = true;
             _timer.Begin();
+
+            Engine.GetService<IAudioManager>().PlaySfxAsync("LayCards");
 
             _board.SetupGame(_settings);
             Started?.Invoke();

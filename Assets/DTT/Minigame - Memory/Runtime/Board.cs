@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using System.Collections.ObjectModel;
+using Naninovel;
 
 namespace DTT.MinigameMemory
 {
@@ -12,6 +13,9 @@ namespace DTT.MinigameMemory
     /// </summary>
     public class Board : MonoBehaviour
     {
+        private const string CardsMatchSoundName = "CardsMatch";
+        private const string GameWinSoundName = "GameWin";
+
         /// <summary>
         /// Is fired when two cards are turned.
         /// </summary>
@@ -74,6 +78,7 @@ namespace DTT.MinigameMemory
         /// Suffle algorithm used to shuffle the cards.
         /// </summary>
         private IShuffleAlgorithm _shuffleAlgorithm;
+        private IAudioManager _audioManager;
 
         /// <summary>
         /// The maximum amount of cards that fit in a row on the grid.
@@ -99,6 +104,11 @@ namespace DTT.MinigameMemory
         /// Create's the cards and places them on the board.
         /// </summary>
         /// <param name="settings">Game settings used for this play session.</param>
+        private void Awake()
+        {
+            _audioManager = Engine.GetService<IAudioManager>();
+        }
+
         public void SetupGame(MemoryGameSettings settings)
         {
             _shuffleAlgorithm = settings.ShuffleAlgorithm;
@@ -380,7 +390,15 @@ namespace DTT.MinigameMemory
             card2.DisableCard(_cardAnimationSpeed);
 
             if (_cardsInGame.Count == 0 && _activeCards.Count == 0)
+            {
                 AllCardsMatched?.Invoke();
+                _audioManager.PlaySfxAsync(GameWinSoundName);
+            }
+            else
+            {
+                _audioManager.PlaySfxAsync(CardsMatchSoundName);
+            }
+
             if (_inactiveCards.Count >= Mathf.FloorToInt(_cardsOnBoard.Count * (_activateAtMatchesFoundPecentage / 100f)))
                 ActivateCards();
             

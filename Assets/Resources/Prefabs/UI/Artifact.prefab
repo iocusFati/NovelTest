@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 1099767300018385383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.61986, y: 0.61986, z: 0.61986}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2201599153167358939}
@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -859, y: -118}
+  m_AnchoredPosition: {x: -433, y: -118}
   m_SizeDelta: {x: 907.6985, y: 790.4666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &102947971563922868
@@ -135,6 +135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8371560164063862990}
+        m_TargetAssemblyTypeName: Naninovel.ScriptableUIBehaviour, Elringus.Naninovel.Runtime
+        m_MethodName: SetVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5463478369709324766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,9 +160,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptName: 
-  scriptText: '@goto Dungeon.PickedTheArtifact'
+  scriptText: '@sfx ChestOpening
+
+    @goto Dungeon.PickedTheArtifact'
   playOnAwake: 0
-  disableWaitInput: 0
+  disableWaitInput: 1
 --- !u!95 &3339134031236868721
 Animator:
   serializedVersion: 5
@@ -183,6 +197,7 @@ GameObject:
   - component: {fileID: 816602125445231108}
   - component: {fileID: 735767095133926232}
   - component: {fileID: 8371560164063862990}
+  - component: {fileID: 6801236139941302735}
   m_Layer: 5
   m_Name: Artifact
   m_TagString: Untagged
@@ -262,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableInteraction: 0
-  visibleOnAwake: 1
+  visibleOnAwake: 0
   controlOpacity: 1
   fadeTime: 0.3
   ignoreTimeScale: 1
@@ -285,3 +300,26 @@ MonoBehaviour:
   _raiseDuration: 2
   _raiseBy: 600
   _button: {fileID: 3569790709641363561}
+--- !u!114 &6801236139941302735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318648256172097070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0

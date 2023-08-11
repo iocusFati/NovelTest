@@ -220,7 +220,7 @@ namespace Naninovel
             audioPlayer.Play(clip, null, volume, false, FindAudioGroupOrDefault(group, sfxGroup), null, additive);
         }
 
-        public virtual async UniTask PlayBgmAsync (string path, float volume = 1f, float fadeTime = 0f, bool loop = true, string introPath = null, string group = default, AsyncToken asyncToken = default)
+        public virtual async UniTask PlayBgmAsync (string path, float volume = 0, float fadeTime = 0f, bool loop = true, string introPath = null, string group = default, AsyncToken asyncToken = default)
         {
             var clipResource = await audioLoader.LoadAndHoldAsync(path, this);
             asyncToken.ThrowIfCanceled();

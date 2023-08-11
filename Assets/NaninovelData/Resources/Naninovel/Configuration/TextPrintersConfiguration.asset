@@ -74,7 +74,7 @@ MonoBehaviour:
     - TMProWide
     - TMProChat
     - TMProBubble
-    - QuestLog
+    - CustomPrinter
     metas:
     - Implementation: Naninovel.UITextPrinter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -455,7 +455,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      guid: 4263a578-aee7-4a91-b5d2-7fd9a6e807a1
+      guid: 1a076794-af5f-4763-bde0-73e198449553
       customData:
         rid: -2
       Pivot: {x: 0.5, y: 0.5}

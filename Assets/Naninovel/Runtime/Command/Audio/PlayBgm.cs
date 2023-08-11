@@ -29,8 +29,7 @@ namespace Naninovel.Commands
         /// <summary>
         /// Volume of the music track.
         /// </summary>
-        [ParameterDefaultValue("1")]
-        public DecimalParameter Volume = 1f;
+        public DecimalParameter Volume = 0.3f;
         /// <summary>
         /// Whether to play the track from beginning when it finishes.
         /// </summary>

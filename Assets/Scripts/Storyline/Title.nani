@@ -1,0 +1,5 @@
+@back Title wait:false
+@hideHUD
+
+@bgm TitleBackground volume:0.3
+@stop

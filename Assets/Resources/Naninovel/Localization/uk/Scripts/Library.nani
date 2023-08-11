@@ -1,0 +1,57 @@
+; English <en> to Ukrainian <uk> localization document for `Library` naninovel script
+
+# 2ed64f18
+; Player.Pain: "This place feels different now, without Hoiku's presence and excitement."
+Player.Pain: Тепер це місце відчувається по-іншому, без присутності Гойку та його зарядженості.
+
+# 1792ff54
+; Player.Default: "Well, what should I do with this artifact.[char Player.Confidence] It may benefit me a lot in the future,[char Player.Pain] but Nanikun and Hoiku were so helpful and nice to me..."
+Player.Default: "Що ж мені робити з цим артефактом.[char Player.Confidence] Він може принести мені багато користі в майбутньому,[char Player.Pain] але Нанікун і Гойку були такі добрі і милі зі мною..."
+
+# b780186e
+; @toast "Quest updated"
+@toast "Квест оновлено"
+
+# 655f9d60
+; Hoiku: Where have i left my glasses???
+Hoiku: Де я залишив свої окуляри????
+
+# c1af5df4
+; Hoiku: Just can't find them!
+Hoiku: Ніяк не можу їх знайти!
+
+# d70a51a6
+; Hoiku.Happy: Ah, a fellow seeker of knowledge![char Hoiku.Default] What brings you here?
+Hoiku.Happy: О, дорогий шукачу знань![char Hoiku.Default] Що привело тебе сюди?
+
+# 5b732447
+; Player.Happy: Greetings, Hoiku.[char Player.Default] Nanikun told me you might have some insights about an ancient artifact.
+Player.Happy: Вітаю, Гойку.[char Player.Default] Нанікун сказав мені, що ти можеш щось знати про стародавній артефакт.
+
+# 3b398c59
+; Hoiku.Happy: Oh, absolutely![char Hoiku.Default] But before we get into that, let's have a bit of fun with a mind-bending puzzle.
+Hoiku.Happy: Звичайно![char Hoiku.Default] Але перш ніж ми перейдемо до цього, давай трохи розважимося з запаромочливою головоломкою.
+
+# 54ac5fb7
+; Hoiku.Surprise: You nailed it! Your wit is impressive.[char Hoiku.Default] Now, about that artifact...
+Hoiku.Surprise: Ти влучив у яблучко! Твоя спостережливість вражає.[char Hoiku.Default] Тепер про артефакт...
+
+# b780186e
+; @toast "Quest updated"
+@toast "Квест оновлено"
+
+# 5407bcff
+; Hoiku.Pain: Well, you clearly made your choice. Just don't expect me to forget this anytime soon.
+Hoiku.Pain: Що ж, ти зробив свій вибір. Тільки не сподівайся, що я забуду про це найближчим часом.
+
+# f170fd9d
+; Player.Pain: I didn't mean to upset you, Hoiku. I thought I was doing the right thing.
+Player.Pain: Я не хотів тебе засмучувати, Гойку. Я думав, що чиню правильно.
+
+# 9cf9c57f
+; Hoiku.Happy: Thank you for the artifact, {PlayerName}!
+Hoiku.Happy: Дякую за артефакт, {PlayerName}!
+
+# f9be878d
+; Player.Surprise: Ah, your welcome, Hoiku![char Player.Happy]
+Player.Surprise: Немає за що, Гойку![char Player.Happy]

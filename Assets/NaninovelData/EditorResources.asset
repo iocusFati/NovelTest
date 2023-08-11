@@ -174,13 +174,13 @@ MonoBehaviour:
       guid: 2a29373be97a0434cac63d0995d262a1
   - Id: Scripts
     Resources:
-    - name: NewScript
+    - name: Start
       pathPrefix: Scripts
       guid: 6f3515470fcb56747a559a102982e226
     - name: Map
       pathPrefix: Scripts
       guid: 7f7595af0b02c1e488ace792a0908547
-    - name: Canyon
+    - name: Desert
       pathPrefix: Scripts
       guid: aafe27eb3d254b24093e30acb8d2c4ac
     - name: Library
@@ -189,6 +189,9 @@ MonoBehaviour:
     - name: Dungeon
       pathPrefix: Scripts
       guid: 1971ecc713ba61a41ae7ceb29f8c236a
+    - name: Title
+      pathPrefix: Scripts
+      guid: 48bbb07eb69eee64c93f74295ae3df01
   - Id: Characters/17c4c1ad-17e6-4802-9a40-0ab8a1d7a024
     Resources:
     - name: Angry
@@ -211,15 +214,21 @@ MonoBehaviour:
       guid: 8a05c81015a4b214c87ee73dcd1fac84
   - Id: Backgrounds/173a2b2c-bf76-4fd3-97cc-5f8276b8ee90
     Resources:
-    - name: Desert
+    - name: Town
       pathPrefix: Backgrounds/MainBackground
-      guid: 2507f9e1467df384e841be5680fe39af
-    - name: Forest
+      guid: 4bb0310c56598cc439118340dd94a4b9
+    - name: Library
       pathPrefix: Backgrounds/MainBackground
-      guid: fde13be653c9e7842b9d6987b653d9ec
+      guid: fef85b526d8a74343b09b40471e59e87
     - name: MysteriousDungeon
       pathPrefix: Backgrounds/MainBackground
       guid: 2cb7de5d2f085fc46831f6bb0c861372
+    - name: NightTown
+      pathPrefix: Backgrounds/MainBackground
+      guid: e9bcd38381a235f40bce9c1666e5b587
+    - name: Title
+      pathPrefix: Backgrounds/MainBackground
+      guid: 158e00c82397a1a4eba219a1717288b1
   - Id: Characters/aa159c19-4553-4e2a-9356-a29c8e529f61
     Resources:
     - name: Confidence
@@ -257,8 +266,58 @@ MonoBehaviour:
     - name: Surprise
       pathPrefix: Characters/Hoiku
       guid: 8a05c81015a4b214c87ee73dcd1fac84
-  - Id: TextPrinters/4263a578-aee7-4a91-b5d2-7fd9a6e807a1
+  - Id: TextPrinters/1a076794-af5f-4763-bde0-73e198449553
     Resources:
-    - name: QuestLog
+    - name: CustomPrinter
       pathPrefix: TextPrinters
-      guid: 54a872f6a99bede49a9449315326e363
+      guid: a90089b669a633946b8aaf5875846bd4
+  - Id: Audio
+    Resources:
+    - name: PaperButton
+      pathPrefix: Audio
+      guid: 2438945470ec15945ae157f8471bc8b3
+    - name: PaperHide
+      pathPrefix: Audio
+      guid: 025df2da31db07e42bd7b56b186d74de
+    - name: CloudNine
+      pathPrefix: Audio
+      guid: 466a21c6e24020845af5ed1b7b5a4e19
+    - name: TownBackground
+      pathPrefix: Audio
+      guid: 2676a88d4c38ddd48a5f554381bb70fe
+    - name: LibraryBackground
+      pathPrefix: Audio
+      guid: ef3c25d27b1e8c248a452ac8e5da547e
+    - name: LayCards
+      pathPrefix: Audio
+      guid: 0e43642fc3086804eb3bc590960fc5da
+    - name: FlipCard
+      pathPrefix: Audio
+      guid: 2ce9875674ca33c46a920e52075ed63f
+    - name: CardsMatch
+      pathPrefix: Audio
+      guid: fbd67f0b1b84b3c41b79d7a5cbd1d7ce
+    - name: GameWin
+      pathPrefix: Audio
+      guid: fbf1ea2213f4e9442b06581e9d20a622
+    - name: CardGameBackground
+      pathPrefix: Audio
+      guid: 05dd2f08d2df4274381abaae3fb05167
+    - name: DungeonBackground
+      pathPrefix: Audio
+      guid: 41adfb5c2ec210b47a349905feb5b21e
+    - name: TitleBackground
+      pathPrefix: Audio
+      guid: d2ec21db7a1b5ba479222dd4d2822dac
+    - name: ChestOpening
+      pathPrefix: Audio
+      guid: 6dd60e63f5f2bc14386f7fcdea7b3c9f
+    - name: HardChoice
+      pathPrefix: Audio
+      guid: 2228adbc5aa3dfc4b8f88088b7ca0a7f
+    - name: TrumpetFail
+      pathPrefix: Audio
+      guid: 87d76239fd24aed49aa863d91a74a261
+    - name: Stun
+      pathPrefix: Audio
+      guid: ab2289619e2ec86408810cfeeb8bb1e0

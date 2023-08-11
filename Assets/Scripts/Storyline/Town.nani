@@ -1,0 +1,131 @@
+@hideAll
+@stopBgm
+@bgm TownBackground
+
+@if currentQuest=="decidingFuture"
+    @back NightTown.Crumble time:1.5
+@else
+    @back Town.Crumble time:1.5
+@endIf
+
+@if currentQuest=="decidingFuture"
+    @goto .DeсidingFuture
+@elseIf currentQuest=="decidedFuture"
+    @goto .AfterTheQuest
+@else
+    @goto .Default
+
+#DeсidingFuture
+@char Player.Default pos:50,0 tint:#878787 wait:false
+@char Nanikun look:Right pos:15,0 tint:#878787 wait:false
+@char Hoiku look:Left tint:#878787 pos:85,0
+
+Nanikun: Welcome back! Did you find the artifact?
+Player.Confidence: Indeed, I have it right here[char Player.Default]!
+Hoiku: So what've you decided to to with it[skipInput]?
+
+@stopBgm
+@bgm HardChoice volume:0.3
+
+@choice "Keep the artifact" goto:.KeepTheArtifact
+@choice "Give it to Nanikun" goto:.GiveTheArtifactToNanikun
+@choice "Give it to Hoiku" goto:.GiveTheArtifactToHoiku
+
+@set currentQuest="decidedFuture"
+
+@updateQuest {t_End}
+@set currentQuest="decidedFuture"
+@toast "Quest finished"
+
+@enableMap
+@stop
+
+# KeepTheArtifact
+Player.Confidence: I've decided to keep the artifact with me.[char Player.Default] Its fate intertwines with my journey.
+
+@stopBgm
+@camera offset:6.5,2.5 zoom:0.44 wait:false
+@sfx TrumpetFail
+@animate Hoiku tint:#878787|#904646 appearance:Default|Angry time:0.55
+@camera offset:-5.5 zoom:0.4 wait:false
+@stopSfx
+@sfx TrumpetFail
+@animate Nanikun tint:#878787|#904646 appearance:Default|Pain time:0.55
+@camera offset:0,0 zoom:0
+Hoiku: Hmm, alright. Just remember, some paths are meant to be shared.
+
+@bgm TownBackground
+
+@set hoikuIsUpset=true
+@set nanikunIsUpset=true
+
+@enableMap
+@stop
+
+# GiveTheArtifactToNanikun
+Player.Confidence: Nanikun, this artifact belongs to you. I can sense its importance to your heart.[char Hoiku.Pain wait:false]
+Nanikun.Happy: Oh, thank you! You have no idea how much this means to me. You're a true friend.[char Player.Happy]
+
+@camera offset:6.5,2.5 zoom:0.44 wait:false
+@sfx Stun
+@animate Hoiku tint:#878787|#904646 appearance:Pain|Angry time:0.35
+Hoiku.Angry: Hmm, alright. Just remember, some paths are meant to be shared.
+@camera offset:0,0 zoom:0 wait:false
+
+@bgm TownBackground
+
+@set hoikuIsUpset=true
+@set nanikunIsUpset=false
+
+@enableMap
+@stop
+
+# GiveTheArtifactToHoiku
+Player.Confidence: Hoiku, this artifact seems to resonate with your research. Take it and unravel its mysteries.[char Nanikun.Pain wait:false]
+Hoiku.Happy: Amazing! Your understanding of its significance is spot on. Together, we'll uncover its secrets![char Player.Happy]
+
+@camera offset:-5.5 zoom:0.4 wait:false
+@sfx Stun
+@animate Nanikun tint:#878787|#904646 appearance:Pain|Surprise|Pain time:0.25
+Hoiku.Angry: Hmm, alright. Just remember, some paths are meant to be shared.
+@camera offset:0,0 zoom:0 wait:false
+
+@bgm TownBackground
+
+@set hoikuIsUpset=false
+@set nanikunIsUpset=true
+
+@enableMap
+@stop
+
+#AfterTheQuest
+@char Player.Default look:Right pos:15,0 tint:white wait:false
+@char Nanikun.Default look:left pos:75,0 tint:white
+
+@if nanikunIsUpset
+    @goto .AngryNanikun
+@else
+    @goto .HappyNanikun
+
+#AngryNanikun
+Nanikun.Pain: So, you decided to play hero and save the day, huh? Thought you were being all noble, didn't you?
+Player.Pain: Nanikun, I didn't mean to upset you...
+Nanikun.Default: Spare me the apologies. Just know that your "selflessness" hasn't gone unnoticed. Maybe next time, think before you act.
+@char Player.Default
+
+@enableMap
+@stop
+
+#HappyNanikun
+Nanikun.Happy: Thank you for the artifact, {PlayerName}!
+Player.Surprise: Ah, your welcome, Nanikun![char Player.Happy]
+
+@enableMap
+@stop
+
+#Default
+@char Player.Default look:Right pos:15,0 wait:false
+@char Nanikun look:Left pos:75,0
+
+@enableMap
+@stop

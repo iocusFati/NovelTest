@@ -1,21 +1,23 @@
 @hideAll
 @back MysteriousDungeon.Crumble time:1.5
+@stopBgm
+@bgm DungeonBackground volume:0.3
 @showArtifact
-@openDungeon false
 @char Player pos:25,0
 
-Player: Finally, this must be the artifact Hoiku mentioned. It's so captivating.
+@print "Finally, this must be the artifact Hoiku mentioned. It's so captivating." author:Player waitInput:false
 
 @stop
 
-#PickedTheArtifact
-@print "Wooooow!" author:Player fadeTime:2 wait:false
+# PickedTheArtifact
+@print Wooooow! author:Player fadeTime:2 wait:false waitInput:false
 
-@updateQuest "It's time to think" location:"Library"
+@updateQuest {t_Think} location:Library
 @set currentQuest="dialogueWithYourself"
 @toast "Quest updated"
 
-@wait 1 do:"@hideAll time:2 wait:false, @hideArtifact 2 wait:false" wait:true
-@goto Library
+@hideArtifact 2 wait:true
+@openDungeon false
+@enableMap
 
 @stop

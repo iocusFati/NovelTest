@@ -41,7 +41,6 @@ namespace DTT.MinigameMemory.Demo
             _finishedMenu._homeButton.onClick.AddListener(BackToStory);
             _finishedMenu._restartButton.onClick.AddListener(Restart);
             _pausedMenu._restartButton.onClick.AddListener(Restart);
-            _pausedMenu._homeButton.onClick.AddListener(BackToStory);
             _pausedMenu._resumeButton.onClick.AddListener(Resume);
         }
 
